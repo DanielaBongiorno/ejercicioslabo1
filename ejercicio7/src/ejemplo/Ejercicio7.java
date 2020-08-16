@@ -8,17 +8,12 @@ import java.util.Scanner;
  */
 public class Ejercicio7 {
 
-    public static int abs(int x) {
-        return x > 0 ? x : -x;
-
-    }
-
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        int x, y, distx, disty, c, n, cont1, cont2, dx, dy, siy, six;
-        distx = disty = six = siy = 0;
-        c = cont1 = cont2 = 0;
+        int x, y, c, n, cont1, cont2, dist, d;
+        int valorx, valory;
+        c = cont1 = cont2 = d = valorx = valory = 0;
 
         System.out.println("Ingrese cantidad de puntos del plano a cargar");
         n = entrada.nextInt();
@@ -39,15 +34,13 @@ public class Ejercicio7 {
                 cont2 = cont2 + 1;
 
             }
-            dx = abs(x);
-            dy = abs(y);
-            if (dx > distx) {
-                distx = dx;
-                six = x;
-            }
-            if (dy > disty) {
-                disty = dy;
-                siy = y;
+            dist = (int) Math.sqrt ((x * x) + (y * y));
+            
+            if (dist > d){
+                d = dist;
+                valorx = x;
+                valory = y;
+            
 
             }
 
@@ -55,6 +48,6 @@ public class Ejercicio7 {
 
         System.out.println("En el primer cuadrante se encuentran: " + cont1 + " puntos");
         System.out.println("En el tercer cuadrante se encuentran: " + cont2 + " puntos");
-        System.out.println("El punto a mayor distancia del origen de coordenadas :(" + six + " ; " + siy + ")");
+        System.out.println("El punto a mayor distancia del origen de coordenadas :(" + valorx + " ; " + valory + ")");
     }
 }
