@@ -28,19 +28,17 @@ public class Ejercicio7 {
             if (x > 0 && y > 0) {
 
                 cont1 = cont1 + 1;
-            }
-            if (x < 0 && y > 0) {
+            } else if (x < 0 && y < 0) {
 
                 cont2 = cont2 + 1;
 
             }
-            dist = (int) Math.sqrt ((x * x) + (y * y));
-            
-            if (dist > d){
+            dist = (int) Math.sqrt((x * x) + (y * y));
+
+            if (dist > d) {
                 d = dist;
                 valorx = x;
                 valory = y;
-            
 
             }
 
